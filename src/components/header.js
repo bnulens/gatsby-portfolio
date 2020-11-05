@@ -1,42 +1,61 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+// import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+import { StyledHeader } from "../style/elements/StyledHeader"
+
+const navLinks = [{
+  social: [
+    {
+      title: 'linkedIn',
+      url: 'https://www.linkedin.com/in/brecht-nulens/'
+    },{
+      title: 'github',
+      url: 'https://github.com/bnulens'
+    },
+    {
+      title: 'email',
+      url:'mailto:brechtnulens@gmail.com'
+    }
+  ],
+  site: ['about','skills','experience','contact']
+}];
+
+const Header = () => (
+
+  <StyledHeader>
+    <div className="header__inner-wrapper">
+      <nav className="header__social-nav">
+        {
+          navLinks[0].social.map((item) => {
+            return (
+              <Link className="header__social-link" href={item.url} target="_blank" rel="norefferer noopener">
+                <img className="header__social-icon" src={`../../svg/${item.title}.svg`} alt={item.title}/>
+              </Link>
+            )
+          })
+        }
+      </nav>
+      <nav className="header__site-nav">
+        {
+          navLinks[0].site.map((link) => {
+            return (
+              <Link className="header__site-nav-link" href={`#${link}`}>{link}</Link>
+            )
+          })
+        }
+      </nav>
     </div>
-  </header>
+  </StyledHeader>
+
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Header
