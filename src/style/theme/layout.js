@@ -1,9 +1,10 @@
 import React from "react"
+import styled from "styled-components"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../../components/header"
-import styled from "styled-components"
+import Footer from "../../components/footer"
 
 const Container = styled.div`
   margin: 0 auto;
@@ -27,7 +28,7 @@ const Layout = ({ children }) => {
       <Container>
         <main>{children}</main>
       </Container>
-      <footer></footer>
+      <Footer/>
     </>
   )
 }
