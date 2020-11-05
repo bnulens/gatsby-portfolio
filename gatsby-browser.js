@@ -1,7 +1,14 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import React from 'react'
+import { ThemeProvider } from "styled-components"
+import { GlobalStyle } from "./src/style/theme/global"
 
-// You can delete this file if you're not using it
+import Theme from "./src/style/theme/theme"
+import Layout from "./src/style/theme/layout"
+
+
+export const wrapRootElement = () => (
+    <ThemeProvider theme={Theme}>
+        <GlobalStyle/>
+        <Layout/>
+    </ThemeProvider>
+)
