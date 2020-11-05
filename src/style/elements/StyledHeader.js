@@ -16,7 +16,7 @@ export const StyledHeader = styled.header`
             display: flex;
             width: 50%;
             a.header__social-link {
-                margin-right: 12px;
+                margin-right: 20px;
                 img.header__social-icon {
                     display: block;
                     height: 30px;
@@ -35,13 +35,18 @@ export const StyledHeader = styled.header`
             justify-content: flex-end;
             width: 50%;
             a.header__site-nav-link {
+                position: relative;
+                width: auto;
                 margin-right: 14px;
                 padding: 8px;
-                transition: all ease-in 0.2s;
-
+                background: linear-gradient(to left, white 50%, black 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                transition: all ease-in 0.4s;
+                
                 :hover {
                     color: white;
-                    background-color: var(--color-black);
+                    background-position: left bottom;
                 }
             }
         }
