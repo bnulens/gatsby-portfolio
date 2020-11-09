@@ -29,9 +29,9 @@ const Header = () => (
         {
           navLinks[0].social.map((item) => {
             return (
-              <Link className="header__social-link" href={item.url} target="_blank" rel="norefferer noopener">
+              <a className="header__social-link" href={item.url} target="__blank" rel="norefferer noopener" key={item.title}>
                 <img className="header__social-icon" src={`../../svg/${item.title}.svg`} alt={item.title}/>
-              </Link>
+              </a>
             )
           })
         }
@@ -40,7 +40,7 @@ const Header = () => (
         {
           navLinks[0].site.map((link) => {
             return (
-              <Link className="header__site-nav-link" href={`#${link}`}>{link}</Link>
+              <Link className="header__site-nav-link" to={`#${link}`} key={link}>{link}</Link>
             )
           })
         }
