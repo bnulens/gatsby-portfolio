@@ -2,21 +2,23 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import Header from "../../components/header"
+import Navigation from "../../components/Navigation/Navbar/Navbar"
+import SideNav from "../../components/Navigation/Navbar/SideNav/SideNav"
 import Footer from "../../components/footer"
 
 const Container = styled.div`
   margin: 0 auto;
-  width: 80vw;
+  max-width: 80vw;
 `
 
 export default function Layout ({ children }) {
   return (
     <>
-      <Header />
-      <Container>
-        <main>{children}</main>
-      </Container>
+      <Navigation/>
+      <SideNav/>
+        <Container> 
+          <main>{children}</main>
+        </Container>
       <Footer/>
     </>
   )
@@ -25,4 +27,3 @@ export default function Layout ({ children }) {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
