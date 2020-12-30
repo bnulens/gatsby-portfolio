@@ -20,17 +20,20 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         --color-white: ${(props) => props.theme.colors.white};
         --color-black: ${(props) => props.theme.colors.black};
+        --color-coal: ${(props) => props.theme.colors.coal};
         --color-darkgrey: ${(props) => props.theme.colors.darkgrey};
         --color-grey: ${(props) => props.theme.colors.grey};
         --color-silver: ${(props) => props.theme.colors.silver};
         --color-lightgrey: ${(props) => props.theme.colors.lightgrey};
+        --color-purple: ${(props) => props.theme.colors.purple};
+        --color-marine: ${(props) => props.theme.colors.marine};
         --color-blue: ${(props) => props.theme.colors.blue};
         --color-green: ${(props) => props.theme.colors.green};
         --color-danger: ${(props) => props.theme.colors.danger};
     }
 
     body {
-        line-height: 1.6;
+        line-height: 1.4;
     }
 
     main {
