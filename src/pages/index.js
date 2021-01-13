@@ -1,15 +1,15 @@
 import React from "react"
 
 import SEO from "../components/seo"
-import Hero from "../components/Hero"
-import About from "../components/Content/About"
+import Hero from "../components/Content/Hero"
 import Experience from "../components/Content/Experience"
+import GatsbyScroll from "../components/Content/GatsbyScroll"
 
 const IndexPage = () => (
   <>
     <SEO title="Home" />
     <Hero/>
-    <About/>
+    <GatsbyScroll/>
     <Experience/>
   </>
 )
