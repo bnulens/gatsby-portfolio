@@ -1,8 +1,10 @@
 import styled from "styled-components"
 
 export const StyledHeader = styled.header`
+    position: absolute;
+    left: 10%;
     height: 100px;
-    border: 1px solid orange;
+    z-index: 5;
 
     .header__inner-wrapper {
         display: flex;
@@ -34,12 +36,14 @@ export const StyledHeader = styled.header`
             display: flex;
             justify-content: flex-end;
             width: 50%;
+
             a.header__site-nav-link {
                 position: relative;
                 width: auto;
                 margin-right: 14px;
                 padding: 8px;
-                background: linear-gradient(to left, white 50%, black 50%);
+                color: white;
+                background: linear-gradient(to left, transparent 50%, black 50%);
                 background-size: 200% 100%;
                 background-position: right bottom;
                 transition: all ease-in 0.4s;
