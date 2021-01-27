@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { graphql, useStaticQuery }from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
+import ScrollProgress from './ScrollProgress'
 import { StyledAboutContent, StyledAboutList } from '../../style/elements/about/StyledAbout'
 
 const listContent = [
     {
         tag: "newbie",
-        title: "I am a noob",
+        title: "Looking for",
         comment: "Hello"
     },
     {
         tag: "quality",
-        title: "Feature Quality",
+        title: "Quality",
         comment: "A quick brown fox jumped over the lazy dog"
     },
     {
         tag: "extra",
-        title: "Good Humour",
+        title: "Possibility",
         comment: "A quick brown fox jumped over the lazy dog"
     },
 ];
@@ -43,68 +44,70 @@ const GatsbyScroll = () => {
     // Checking if the window is defined
     // const isBrowser = typeof window !== `undefined`;
     
+    const articleRef = listContent.map(a => {
+        a = React.createRef();
+        return a
+    });
+
     const [activeLink, setActiveLink] = useState(0);
-    const [scrolled, setScrolled] = useState(false);
-    
-    // For each tag a ref is made to be adressed in the DOM
-    const articleRefs = listContent.reduce((acc, value) => {
-        acc[value.tag] = React.createRef();
-        return acc;
-    }, {});
 
     // Index of clicked target toggles active class
-    const handleClick = (tag, i, e)=> {
+    const handleClick = (e, i)=> {
         e.preventDefault();
-        articleRefs[tag].current.scrollIntoView({ behavior: 'smooth'});
-        setActiveLink(i);
+        articleRef[i].current.scrollIntoView({ behavior: 'smooth'});
+        setActiveLink(i)
+        if (articleRef[0] && i > activeLink) {
+            e.preventDefault()
+            setActiveLink(0)
+        }   
     };
+    
+    const isElementInViewport = (el) => {
+        let rect = el.getBoundingClientRect();
 
-    // Change state on scroll
-    // useEffect(() => {
+        return (
+            rect.top >= 0 && 
+            rect.left >= 0 && 
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && 
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
         
-
-    //     const handleScroll = () => {
-    //         const isScrolled = window.scrollY < 15;
-    //         if (isScrolled !== scrolled) {
-    //             setScrolled(!scrolled);
-    //         }
-    //         document.addEventListener('scroll', handleScroll, { passive: true });
-    //     };
-
-    //     return () => {
-    //         // clean up the event handler when the component unmounts
-    //         document.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, [scrolled]);
-
     useEffect(() => {
-        const articles = [...document.getElementsByClassName("list-item__article")];
-        console.log(articles)
+        const handleScroll = e => {
+            if (typeof window !== undefined) {
+                e.preventDefault();
+                const markers = [...document.getElementsByClassName("list-item__card-marker")];
+    
+                if (isElementInViewport(markers[0])){
+                    setActiveLink(0)
+                } else {
+                    markers.forEach((m, i) => {
+                        switch (isElementInViewport(m) && i !== activeLink) {
+                            case true:
+                                setActiveLink(i);
+                            break;
+                            case false:
+                                // console.log(i)
+                            break;
+                            default:
+                                setActiveLink(0);
+                            break;
+                        }
+                    })
+                }
+            }
+        };
 
-        articles.forEach((article, i) => {
-            console.log(article.offsetTop)
-        })
+        window.addEventListener("scroll", handleScroll, { passive: false });
 
-        const onScroll = () => {
-          const scrollCheck = window.scrollY < 10
-          if (scrollCheck !== scrolled) {
-            setScrolled(scrollCheck)
-          }
-        }
-      
-        // setting the event handler from web API
-        document.addEventListener("scroll", onScroll)
-      
-        // cleaning up from the web API
-        return () => {
-            document.removeEventListener("scroll", onScroll)
-        }
-      }, [scrolled, setScrolled])
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [activeLink, setActiveLink]);
     
     return (
-        <StyledAboutContent id="about" data-active={scrolled}>
+        <StyledAboutContent id="about">
+            <ScrollProgress/>
             <div className="content-container">
-                {/* <div className="scroll-height">{window.scrollY}</div> */}
                 <div className="content-left">
                     <h1>My name is Brecht</h1>
                     <p>In this paragraph I explain something about my skills, features and strong points to entice you to read further</p>
@@ -118,7 +121,7 @@ const GatsbyScroll = () => {
                                             className={`content-left__bullet-link-${activeLink === i ? "active" : "inactive"}`}
                                             href={`/#${a.tag}`} 
                                             key={a.tag} 
-                                            onClick={(e) => handleClick(a.tag, i, e)}
+                                            onClick={(e) => handleClick(e, i)}
                                         >
                                             {a.title}
                                         </a>
@@ -133,7 +136,8 @@ const GatsbyScroll = () => {
                         {
                             listContent.map((a, i) => {
                                 return (
-                                    <li className="list-item__card" key={Math.random() * 10} ref={articleRefs[a.tag]}>
+                                    <li className="list-item__card" key={Math.random() * 10} ref={articleRef[i]}>
+                                        <div className="list-item__card-marker"></div>
                                         <article className="list-item__article">
                                             <img src={filteredUrls[i]} alt="item" className="list-item__image"/>
                                             <h3 className="list-item__title">{a.title}</h3>
