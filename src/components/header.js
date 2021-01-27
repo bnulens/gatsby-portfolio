@@ -40,7 +40,7 @@ const Header = () => (
         {
           navLinks[0].site.map((link) => {
             return (
-              <Link className="header__site-nav-link" to={`#${link}`} key={link}>{link}</Link>
+              <Link className="header__site-nav-link" to={`/#${link}`} key={link}>{link}</Link>
             )
           })
         }
