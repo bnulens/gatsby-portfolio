@@ -22,10 +22,19 @@ const NavListSocial = styled.ul`
     height: 100%;  
 
     a {
+        display: block;
+        margin-right: 24px;
+        cursor: pointer;
+
         img {
             display: block;
             height: 20px;
             width: auto;
+            transition: 0.4s all ease;
+
+            :hover {
+                filter: invert(1);
+            }
         }
     }
 `
