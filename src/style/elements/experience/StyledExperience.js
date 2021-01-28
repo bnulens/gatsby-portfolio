@@ -1,6 +1,83 @@
 import styled from "styled-components"
 import { Image } from "cloudinary-react"
 
+export const StyledExperience = styled.section`
+    display: block;
+    margin: 56px 0;
+
+    .experience__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .experience__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            h3 {
+                font-size: 4vw;
+                font-weight: 400;
+            }
+
+            p {
+                width: 75%;
+                margin-top: 12px;
+                color: var(--color-silver);
+            }
+        }
+
+        .experience__links {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 24px auto 0px;
+            width: 50%;
+
+            a.link__record-store {
+                color: white;
+                border-radius: 4px;
+                background-color: var(--color-purple);
+                width: 100%;
+                padding: 8px;
+                margin-right: 12px;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            a.link__motivation {
+                color: var(--color-purple);
+                border: 1px solid var(--color-purple);
+                border-radius: 4px;
+                width: 100%;
+                padding: 8px;
+                margin-left: 12px;
+                text-align: center;
+            }
+        }
+    }
+    @media ${(props) => props.theme.mediaQueries.medium} {
+        margin: 8vh 0;
+
+        .experience__container {
+            .experience__header {
+                text-align: justify;
+
+                h3 {
+                    font-size: 8vw;
+                }
+                p {
+                    width: 100%;
+                }
+            }
+            .experience__links {
+                width: 100%;
+            }
+        }
+    }
+`
+
 export const StyledPeerReview = styled.li`
     max-width: 75%;
     margin: 48px auto;
@@ -37,8 +114,8 @@ export const StyledPeerReview = styled.li`
                 height: 50px;
                 margin-top: 12px;
             }
-
         }
+
         .review__text {
             border-left: 2px solid var(--color-lightgrey);
             width: 70%;
@@ -58,73 +135,30 @@ export const StyledPeerReview = styled.li`
             }
         }
     }
-    ::after {
-        display: block;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        height: 200px;
-        width: 100%;
-        background-color: grey;
-    }
 
-`
+    @media ${(props) => props.theme.mediaQueries.medium} {
+        margin: 10vh auto;
+        max-width: 100%;
 
-export const StyledExperience = styled.section`
-    display: block;
-    margin: 56px 0;
-
-    .experience__container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        .experience__header {
-            display: flex;
+        .review__container {
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            text-align: center;
+            width: 100%;
 
-            h3 {
-                font-size: 54px;
-                font-weight: 400;
-            }
-
-            p {
-                width: 75%;
-                margin-top: 12px;
-            }
-        }
-        .experience__links {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 24px auto 0px;
-            width: 50%;
-
-            a.link__record-store {
-                color: white;
-                border-radius: 4px;
-                background-color: var(--color-purple);
+            .review__profile {
                 width: 100%;
-                padding: 8px;
-                margin-right: 12px;
-                text-align: center;
-                cursor: pointer;
             }
 
-            a.link__motivation {
-                color: var(--color-purple);
-                border: 1px solid var(--color-purple);
-                border-radius: 4px;
+            .review__text {
+                border-top: 2px solid var(--color-lightgrey);
+                border-left: none;
                 width: 100%;
-                padding: 8px;
-                margin-left: 12px;
-                text-align: center;
             }
         }
     }
 `
+
 
 export const DefaultAvatar = styled(Image)`
     display: block;
