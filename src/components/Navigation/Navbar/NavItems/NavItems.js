@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import NavItem from './NavItem/NavItem';
+import { navLinks } from '../../../../info/textContents'
 
 const Nav = styled.nav`
     display: flex;
@@ -38,22 +39,6 @@ const NavListSocial = styled.ul`
         }
     }
 `
-const navLinks = {
-    social: [
-      {
-        title: 'linkedIn',
-        url: 'https://www.linkedin.com/in/brecht-nulens/'
-      },{
-        title: 'github',
-        url: 'https://github.com/bnulens'
-      },
-      {
-        title: 'email',
-        url:'mailto:brechtnulens@gmail.com'
-      }
-    ],
-    site: ['about','skills','experience','contact']
-};
 
 const NavItems = ({ mobile, clicked }) => {
     return (

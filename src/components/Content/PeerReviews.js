@@ -2,39 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 
 import { StyledPeerReview, DefaultAvatar, PeerAvatar, CompanyLogo, DefaultCompany } from "../../style/elements/experience/StyledExperience"
-
-const reviewContent = [
-    {
-        reviewer: "Geert Van Campenhout",
-        comment: "I have worked with Brecht on two projects. He is eager to learn and a high potential. In the short amount of time he has been developing, he has picked up a lot of skills and is on track to become a great addition to any development team.",
-        jobTitle: "Full stack developer",
-        worksAt: "StriveCloud - scalable gamification software",
-        images: {
-            avatar: "geert-lion.jpg",
-            company: "strivecloud-full.png"
-        }
-    },
-    {
-        reviewer: "John Doe",
-        comment: "New to the business but already showing a lot of potential",
-        jobTitle: "Front end developer",
-        worksAt: "Free float stocks",
-        images: {
-            avatar: undefined,
-            company: undefined
-        }
-    },
-    {
-        reviewer: "Jane Doe",
-        comment: "Keen eyed guy",
-        jobTitle: "HR director",
-        worksAt: "Generic Example 2",
-        images: {
-            avatar: undefined,
-            company: undefined
-        }
-    }
-]
+import { reviewContent } from '../../info/textContents'
 
 const PeerReviews = () => {
     const data = useStaticQuery(graphql`

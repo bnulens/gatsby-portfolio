@@ -2,25 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import ScrollProgress from './ScrollProgress'
-import { StyledAboutContent, StyledAboutList } from '../../style/elements/about/StyledAbout'
 
-const listContent = [
-    {
-        tag: "newbie",
-        title: "Looking for",
-        comment: "Hello"
-    },
-    {
-        tag: "quality",
-        title: "Quality",
-        comment: "A quick brown fox jumped over the lazy dog"
-    },
-    {
-        tag: "extra",
-        title: "Possibility",
-        comment: "A quick brown fox jumped over the lazy dog"
-    },
-];
+import { listContent } from '../../info/textContents'
+import { StyledAboutContent, StyledAboutList } from '../../style/elements/about/StyledAbout'
 
 const GatsbyScroll = () => {
     const data = useStaticQuery(graphql`
@@ -116,9 +100,9 @@ const GatsbyScroll = () => {
                             listContent.map((a, i) => {
                                 return (
                                     <li className="content-left__bullet" key={i}>
-                                        <h3 className="content-left__bullet-index">{`0${i + 1}`}</h3>
+                                        <h3 className={`content-left__bullet-index ${activeLink === i ? "active" : "inactive"}`}>{`0${i + 1}`}</h3>
                                         <a
-                                            className={`content-left__bullet-link-${activeLink === i ? "active" : "inactive"}`}
+                                            className={`content-left__bullet-link ${activeLink === i ? "active" : "inactive"}`}
                                             href={`/#${a.tag}`} 
                                             key={a.tag} 
                                             onClick={(e) => handleClick(e, i)}
