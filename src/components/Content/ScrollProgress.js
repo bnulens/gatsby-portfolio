@@ -5,7 +5,7 @@ const ProgressBar = styled.div`
     position: sticky;
     display: block;
     top: 0;
-    height: 2px;
+    height: 4px;
     width: 100%;
     z-index: 100;
     --scroll: 0%;
