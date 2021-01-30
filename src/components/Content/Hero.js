@@ -1,51 +1,61 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 
+import FrontImage from "gatsby-background-image"
+
 const StyledHero = styled.div`
-    position: relative;
-    img {
-        display: block;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        width: 100vw;
-        max-width: 100vw;
-        max-height: 100vh;
-        object-fit: cover;
-    }
-    h2 {
-        position: absolute;
-        top: 30%;
-        left: 0;
-        color: var(--color-white);
-        font-size: 4vw;
-        font-weight: 400;
-    }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-left: -12.5%;
+  margin-right: -12.5%;
+  background-color: blue;
+
+  h1 {
+    color: var(--color-white);
+    font-size: 56px;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 750px;
+    text-align: justify;
+  }
 `
 
-const Hero = () => {
-    const data = useStaticQuery(graphql`
-        query CloudinaryImage {
-            cloudinaryMedia(public_id: {eq: "gatsby-portfolio/portfolio-hero-2"}) {
-                secure_url
-            }
-        }
-        `
-    );
-    const clImage = data.cloudinaryMedia.secure_url
-    if (!clImage) {
-        return <div className="default-hero">Picture not found</div>
-    }
+const Hero = (props) => {
+  const { t } = useTranslation()
 
-    return (
-        <StyledHero hasHero>
-            <img src={clImage} alt="cloudinary-hero"/>
-            <h2>Looking for a fast break</h2>
-        </StyledHero>
-    )
+  return (
+    <StyledHero>
+      <h1>{t("test")}</h1>
+      <h2>
+        Welcome! My name is Brecht. I am a junior javascript developer with an
+        interest in both frontend as backend work. For now, I work on personal
+        projects, but I am keen to start a real job. My personal goal is to
+        become the best web developer I can be.{" "}
+      </h2>
+    </StyledHero>
+  )
 }
+
+export const data = useStaticQuery(graphql`
+  query HeaderQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`)
 
 export default Hero
