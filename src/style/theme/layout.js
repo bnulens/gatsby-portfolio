@@ -2,24 +2,24 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import Navigation from "../../components/Navigation/Navbar/Navbar"
-import SideNav from "../../components/Navigation/Navbar/SideNav/SideNav"
+import "../../i18n"
+
+import Navigation from "../../components/header"
 import Footer from "../../components/footer"
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 80vw;
+  max-width: 80%;
 `
 
-export default function Layout ({ children }) {
+export default function Layout({ children }) {
   return (
     <>
-      <Navigation/>
-      <SideNav/>
-        <Container> 
-          <main>{children}</main>
-        </Container>
-      <Footer/>
+      <Navigation />
+      <Container>
+        <main>{children}</main>
+      </Container>
+      <Footer />
     </>
   )
 }
