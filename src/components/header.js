@@ -1,61 +1,89 @@
 import React from "react"
-// import PropTypes from "prop-types"
+import styled from "styled-components"
 import { Link } from "gatsby"
 
-import { StyledHeader } from "../style/elements/StyledHeader"
+import { navLinks } from "../info/textContents"
 
-const navLinks = [{
-  social: [
-    {
-      title: 'linkedIn',
-      url: 'https://www.linkedin.com/in/brecht-nulens/'
-    },{
-      title: 'github',
-      url: 'https://github.com/bnulens'
-    },
-    {
-      title: 'email',
-      url:'mailto:brechtnulens@gmail.com'
+import LanguageSwitcher from "./LanguageSwitcher"
+
+const Nav = styled.header`
+  position: absolute;
+  top: 6%;
+  left: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 80vw;
+  z-index: 100;
+`
+const NavListSocial = styled.ul`
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  a {
+    display: block;
+    margin-right: 24px;
+    cursor: pointer;
+
+    img {
+      display: block;
+      height: 20px;
+      width: auto;
+      transition: 0.4s all ease;
+
+      :hover {
+        filter: invert(1);
+      }
     }
-  ],
-  site: ['about','skills','experience','contact']
-}];
+  }
+`
+const NavList = styled.ul`
+  display: flex;
+  flex-direction: ${(props) => (props.mobile ? "column" : "row")};
+  align-items: center;
+  height: 100%;
+`
+const NavLink = styled(Link)`
+  color: var(--color-white);
+  margin-left: 24px;
+`
 
-const Header = () => (
+const NavItems = () => {
+  return (
+    <Nav>
+      <NavListSocial>
+        {navLinks.social.map((item) => {
+          return (
+            <a
+              className="header__social-link"
+              href={item.url}
+              target="__blank"
+              rel="norefferer noopener"
+              key={item.title}
+            >
+              <img
+                className="header__social-icon"
+                src={`../../svg/${item.title}.svg`}
+                alt={item.title}
+              />
+            </a>
+          )
+        })}
+      </NavListSocial>
+      <LanguageSwitcher />
+      <NavList>
+        {navLinks.site.map((item) => {
+          return (
+            <NavLink to={`#${item}`} key={item}>
+              {item}
+            </NavLink>
+          )
+        })}
+      </NavList>
+    </Nav>
+  )
+}
 
-  <StyledHeader>
-    <div className="header__inner-wrapper">
-      <nav className="header__social-nav">
-        {
-          navLinks[0].social.map((item) => {
-            return (
-              <a className="header__social-link" href={item.url} target="__blank" rel="norefferer noopener" key={item.title}>
-                <img className="header__social-icon" src={`../../svg/${item.title}.svg`} alt={item.title}/>
-              </a>
-            )
-          })
-        }
-      </nav>
-      <nav className="header__site-nav">
-        {
-          navLinks[0].site.map((link) => {
-            return (
-              <Link className="header__site-nav-link" to={`/#${link}`} key={link}>{link}</Link>
-            )
-          })
-        }
-      </nav>
-    </div>
-  </StyledHeader>
-
-)
-
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
-
-export default Header
+export default NavItems
