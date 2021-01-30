@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import ScrollProgress from './ScrollProgress'
+import Academics from './Academics'
 
 import { listContent } from '../../info/textContents'
 import { StyledAboutContent, StyledAboutList } from '../../style/elements/about/StyledAbout'
@@ -33,6 +34,7 @@ const GatsbyScroll = () => {
         return a
     });
 
+    const academics = [...listContent[1].studies]
     const [activeLink, setActiveLink] = useState(0);
 
     // Index of clicked target toggles active class
@@ -56,7 +58,7 @@ const GatsbyScroll = () => {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
-        
+
     useEffect(() => {
         const handleScroll = e => {
             if (typeof window !== undefined) {
@@ -98,6 +100,7 @@ const GatsbyScroll = () => {
                     <ul>
                         {
                             listContent.map((a, i) => {
+                                
                                 return (
                                     <li className="content-left__bullet" key={i}>
                                         <h3 className={`content-left__bullet-index ${activeLink === i ? "active" : "inactive"}`}>{`0${i + 1}`}</h3>
@@ -126,6 +129,7 @@ const GatsbyScroll = () => {
                                             <img src={filteredUrls[i]} alt="item" className="list-item__image"/>
                                             <h3 className="list-item__title">{a.title}</h3>
                                             <p className="list-item__text">{a.comment}</p>
+                                            {i === 1 ? <Academics education={academics}/> : <span></span>}
                                         </article>
                                     </li>
                                 ) 
