@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 import "../../i18n"
 
-import Navigation from "../../components/header"
+import Header from "../../components/header"
 import Footer from "../../components/footer"
 
 const Container = styled.div`
@@ -15,7 +15,7 @@ const Container = styled.div`
 export default function Layout({ children }) {
   return (
     <>
-      <Navigation />
+      <Header />
       <Container>
         <main>{children}</main>
       </Container>
