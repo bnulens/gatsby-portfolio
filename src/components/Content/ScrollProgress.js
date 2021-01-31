@@ -10,7 +10,11 @@ const ProgressBar = styled.div`
   width: 100%;
   z-index: 100;
   --scroll: 0%;
-  background-color: blue;
+  background: linear-gradient(
+    90deg,
+    var(--color-purple) var(--scroll),
+    transparent 0
+  );
 `
 
 const ScrollProgress = () => {
