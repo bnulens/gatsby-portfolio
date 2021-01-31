@@ -1,3 +1,35 @@
 {
-    "test": "Lining up a shot"
+    "header": {
+        "mainTitle": "Lining up a shot",
+        "catchTitle": "My name is Brecht. I am a junior Javascript developer with an interest in both frontend as backend work. For now, I work on personal projects, but I am keen to start a real job. My personal goal is to become the best web developer I can be."
+    },
+    "navbar": {
+        "about": "about",
+        "experience": "experience"
+    },
+    "about":{
+        "whyMe": "Why choose me?",
+        "academics": "Academics",
+        "skills": "Skills",
+        "interests": "Interests",
+        "comments":{
+            "item": "",
+            "item1": "",
+            "item2": ""
+        }
+    },
+    "experience": {
+        "headingTitle": "Ready to rebound",
+        "heading": "After a couple attempts in finding a proper field of education, I am convinced I now am on the right track. I feel ready to strike and make this the greatest rebound of my life.",
+        "links":{
+            "recordStore": "Record store",
+            "motivation": "Motivation"
+        }
+    },
+    "review":{
+        "comment1": "I have worked with Brecht on two projects. He is eager to learn and a high potential. In the short amount of time he has been developing, he has picked up a lot of skills and is on track to become a great addition to any development team."
+    },
+    "footer": {
+
+    }
 }

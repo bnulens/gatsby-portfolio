@@ -1,3 +1,36 @@
 {
-    "test": "Lining up a shot"
+    "header": {
+        "mainTitle": "Een schot oplijnen",
+        "catchTitle": "Mijn naam is Brecht. Ik ben een junior Javascript developer met veel interesse voor front- en back end projecten. Momenteel werk ik aan persoonlijke projecten maar ik wil graag een echte carrière starten. Mijn doel om de best mogelijke developer te worden die ik kan zijn."
+    },
+    "navbar": {
+        "about": "over",
+        "experience": "ervaring"
+    },
+    "about":{
+        "whyMe": "Waarom ik?",
+        "academics": "Opleiding",
+        "skills": "Vaardigheden",
+        "interests": "Interesses",
+        "comments":{
+            "item": "",
+            "item1": "",
+            "item2": ""
+        }
+    },
+    "experience": {
+        "headingTitle": "Klaar voor de rebound",
+        "heading": "Na een paar pogingen om een geschikte opleiding te vinden ben ik ervan overtuigd dat ik nu op het juiste pad ben. Ik ben klaar om toe te slaan en om van deze kans de beste rebound van mijn leven te maken.",
+        "links":{
+            "recordStore": "Platenwinkel",
+            "motivation": "Motivatiebrief"
+        }
+    },
+    "review":{
+        "comment1": "Ik heb met Brecht aan twee projecten gewerkt. Hij is nieuwsgierig en heeft veel aanleg. In de korte periode dat hij nog maar bezig is heeft hij al veel geleerd. Zo is hij op weg om een geweldige toevoeging te worden aan elk development team"
+       
+    },
+    "footer": {
+
+    }
 }
