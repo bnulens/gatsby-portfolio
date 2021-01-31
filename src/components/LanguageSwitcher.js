@@ -10,10 +10,21 @@ const Wrapper = styled.div`
 
 const LanguageBlock = styled.button`
   margin-right: 6px;
+  padding: 4px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: transparent;
+  color: var(--color-white);
+  transition: all ease 0.3s;
+
+  :hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
 `
 
 const LanguageSwitcher = () => {
-  const handleLanguageSwitch = language => {
+  const handleLanguageSwitch = (language) => {
     console.log("clicked", language)
     i18next.changeLanguage(language, (err, t) => {
       if (err) return console.log("something went wrong loading", err)
@@ -39,4 +50,3 @@ const LanguageSwitcher = () => {
 }
 
 export default LanguageSwitcher
-
