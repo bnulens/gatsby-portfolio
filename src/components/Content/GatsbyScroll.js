@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { Image } from "cloudinary-react"
 import { useTranslation } from "react-i18next"
 
 import ScrollProgress from "./ScrollProgress"
@@ -13,30 +13,6 @@ import {
 
 const GatsbyScroll = () => {
   const { t } = useTranslation()
-  const data = useStaticQuery(graphql`
-    query {
-      allCloudinaryMedia(
-        filter: { public_id: { glob: "gatsby-portfolio/about/*" } }
-      ) {
-        edges {
-          node {
-            secure_url
-          }
-        }
-      }
-    }
-  `)
-
-  // Extracting imageURLs & pushing them into an array
-  const clImages = data.allCloudinaryMedia.edges
-  const filteredUrls = []
-  clImages.forEach((item) => {
-    filteredUrls.push(item.node.secure_url)
-  })
-
-  // Checking if the window is defined
-  // const isBrowser = typeof window !== `undefined`;
-
   const articleRef = listContent.map((a) => {
     a = React.createRef()
     return a
@@ -142,10 +118,13 @@ const GatsbyScroll = () => {
                 >
                   <div className="list-item__card-marker"></div>
                   <article className="list-item__article">
-                    <img
-                      src={filteredUrls[i]}
-                      alt="item"
-                      className="list-item__image"
+                    <Image
+                      cloudName="bnulens"
+                      publicId={`gatsby-portfolio/about/${a.image}.png`}
+                      secure="true"
+                      format="png"
+                      width="150"
+                      alt={a.image}
                     />
                     <h3 className="list-item__title">{t(a.title)}</h3>
                     <p className="list-item__text">{t(a.comment)}</p>
