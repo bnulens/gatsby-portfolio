@@ -18,7 +18,7 @@ const LanguageBlock = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: var(--color-purple);
+    background-color: var(--color-marine);
   }
 
   &.active {
