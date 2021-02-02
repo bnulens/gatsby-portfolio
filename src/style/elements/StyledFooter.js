@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledFooter = styled.footer`
-  height: 300px;
+  height: 200px;
   padding: 32px;
   color: white;
   background-color: var(--color-coal);
@@ -17,7 +17,7 @@ export const StyledFooter = styled.footer`
 
     .footer__brief {
       h3 {
-        font-size: 40px;
+        font-size: 32px;
         font-weight: 100;
         text-decoration: underline;
       }
