@@ -18,9 +18,8 @@ const ProgressBar = styled.div`
 `
 
 const ScrollProgress = () => {
-  const { t } = useTranslation()
-
   const [progress, setProgress] = useState(0)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const catchProgress = (e) => {
@@ -44,7 +43,7 @@ const ScrollProgress = () => {
 
     window.addEventListener("scroll", catchProgress, { passive: false })
     return () => window.removeEventListener("scroll", catchProgress)
-  }, [progress, setProgress])
+  }, [progress, t])
 
   return <ProgressBar id="about-scroll__progress"></ProgressBar>
 }
