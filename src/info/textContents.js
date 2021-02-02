@@ -14,6 +14,7 @@ export const reviewContent = [
 export const listContent = [
   {
     tag: "about.education",
+    image: "fox",
     title: "about.academics",
     comment: "about.comments.item",
     studies: [
@@ -56,11 +57,13 @@ export const listContent = [
   },
   {
     tag: "newbie",
+    image: "kobe",
     title: "about.skills",
     comment: "about.comments.item1",
   },
   {
     tag: "extra",
+    image: "guitar",
     title: "about.interests",
     comment: "about.comments.item2",
   },
