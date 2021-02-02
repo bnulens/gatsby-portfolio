@@ -2,7 +2,17 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledItem = styled.li`
-  margin-top: 24px;
+  margin-top: 32px;
+  font-weight: 100;
+
+  h4 {
+    font-size: 24px;
+    font-weight: 100;
+  }
+
+  p {
+    color: var(--color-silver);
+  }
 `
 
 const Academics = ({ education }) => {
@@ -12,7 +22,7 @@ const Academics = ({ education }) => {
         return (
           <StyledItem key={s.title}>
             <div className="list-item__study-item-header">
-              <h3>{s.title}</h3>
+              <h4>{s.title}</h4>
             </div>
             <div className="list-item__study-item-content">
               <p>
