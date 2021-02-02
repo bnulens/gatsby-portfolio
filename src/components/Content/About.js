@@ -11,7 +11,7 @@ import {
   StyledAboutList,
 } from "../../style/elements/about/StyledAbout"
 
-const GatsbyScroll = () => {
+const About = () => {
   const { t } = useTranslation()
   const articleRef = listContent.map((a) => {
     a = React.createRef()
@@ -144,4 +144,4 @@ const GatsbyScroll = () => {
   )
 }
 
-export default GatsbyScroll
+export default About
