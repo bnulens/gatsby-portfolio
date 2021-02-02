@@ -50,7 +50,7 @@ const StyledHero = styled.div`
 const Hero = () => {
   const { t } = useTranslation()
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query heroImageQuery {
       file(relativePath: { eq: "portfolio-hero.jpg" }) {
         id
         childImageSharp {
