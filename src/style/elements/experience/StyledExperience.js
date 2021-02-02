@@ -63,13 +63,6 @@ export const StyledExperience = styled.section`
     .experience__container {
       .experience__header {
         text-align: justify;
-
-        h3 {
-          font-size: 8vw;
-        }
-        p {
-          width: 100%;
-        }
       }
       .experience__links {
         width: 100%;
@@ -101,8 +94,8 @@ export const StyledPeerReview = styled.article`
 
     img:first-child {
       display: block;
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
     }
 
@@ -115,9 +108,14 @@ export const StyledPeerReview = styled.article`
   }
 
   .review__text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
     border-left: 2px solid var(--color-lightgrey);
-    width: 70%;
+    width: 700px;
     padding: 16px;
+    font-size: 16px;
 
     .review__comment {
       font-style: italic;
@@ -125,11 +123,9 @@ export const StyledPeerReview = styled.article`
       color: grey;
     }
     .review__person {
-      font-size: 12px;
       margin-top: 16px;
     }
     .review__job-title {
-      font-size: 12px;
     }
   }
 
