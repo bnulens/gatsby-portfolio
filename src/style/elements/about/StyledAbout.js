@@ -106,10 +106,9 @@ export const StyledAboutList = styled.ul`
   .list-item__card {
     position: relative;
     display: block;
-    width: 100%;
     min-height: 500px;
     padding: 0 24px;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 
     .list-item__card-marker {
       position: absolute;
@@ -131,7 +130,7 @@ export const StyledAboutList = styled.ul`
       }
       .list-item__title {
         display: block;
-        font-size: 6vw;
+        font-size: 4vw;
         font-weight: 400;
       }
       .list-item__text {
