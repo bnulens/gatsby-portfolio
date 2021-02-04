@@ -19,12 +19,13 @@ export const StyledExperience = styled.section`
       h3 {
         font-size: 4vw;
         font-weight: 400;
+        max-width: 700px;
       }
 
       p {
-        width: 75%;
+        max-width: 750px;
         margin-top: 12px;
-        color: var(--color-silver);
+        color: var(--color-black);
       }
     }
 

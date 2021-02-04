@@ -122,16 +122,17 @@ export const StyledAboutList = styled.ul`
       display: flex;
       flex-direction: column;
       text-align: justify;
+      margin-bottom: 24px;
 
       .list-item__image {
         display: block;
         width: 10vw;
-        margin: 0 auto;
       }
       .list-item__title {
         display: block;
         font-size: 4vw;
         font-weight: 400;
+        margin-top: 24px;
       }
       .list-item__text {
         display: inline-block;
@@ -141,7 +142,7 @@ export const StyledAboutList = styled.ul`
 
     @media ${(props) => props.theme.mediaQueries.medium} {
       padding: 0;
-      margin-bottom: 20px;
+      margin-bottom: 100px;
 
       .list-item__article {
         .list-item__image {

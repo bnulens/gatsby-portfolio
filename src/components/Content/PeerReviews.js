@@ -66,7 +66,9 @@ const PeerReviews = () => {
         )}
       </div>
       <div className="review__text">
-        <p className="review__comment">{t(reviewContent[0].comment)}</p>
+        <blockquote className="review__comment">
+          {t(reviewContent[0].comment)}
+        </blockquote>
         <p className="review__person">
           <b>{reviewContent[0].reviewer}</b>
         </p>

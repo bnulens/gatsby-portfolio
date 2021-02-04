@@ -6,7 +6,7 @@ const SkillGrid = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 30px 30px;
+  gap: 50px 40px;
   grid-template-areas:
     ". . ."
     ". . ."
@@ -16,28 +16,28 @@ const SkillGrid = styled.ul`
 `
 const SkillInfo = styled.span`
   position: absolute;
-  top: 120%;
-  display: block;
-  height: auto;
-  width: 100px;
-  margin: 0 auto;
-  padding: 16px 8px 10px;
+  bottom: -35px;
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background-color: var(--color-purple);
   transition: opacity ease-in 0.3s;
   opacity: 0;
-  z-index: 50;
+  z-index: 1000;
 `
 const SkillIcon = styled.img`
   display: block;
-  width: 55px;
+  width: 45px;
   z-index: 50;
 `
-const SkillItem = styled.div`
+const SkillItem = styled.li`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  ${SkillIcon}:hover + ${SkillInfo} {
+  &:hover ${SkillInfo} {
     opacity: 1;
   }
 `
@@ -73,7 +73,7 @@ const SkillSet = () => {
       {filteredIcons.map((icn, i) => {
         return (
           <SkillItem>
-            <SkillInfo role="image">{icn.base}</SkillInfo>
+            <SkillInfo role="image">{icn.base.replace(".svg", "")}</SkillInfo>
             <SkillIcon src={icn.publicURL} alt={`skill-icon${i}`} key={i} />
           </SkillItem>
         )

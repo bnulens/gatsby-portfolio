@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        line-height: 1.4;
+        line-height: 1.6;
     }
 
     main {
@@ -73,5 +73,9 @@ export const GlobalStyle = createGlobalStyle`
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    }
+
+    p{
+        line-height: 1.8;
     }
 `

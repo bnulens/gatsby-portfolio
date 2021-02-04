@@ -16,9 +16,9 @@ const StyledItem = styled.li`
       flex-direction: column;
       justify-content: center;
       h4 {
+        position: relative;
         font-size: 24px;
         font-weight: 100;
-        margin-left: 20px;
         text-align: left;
       }
       p {
@@ -29,6 +29,9 @@ const StyledItem = styled.li`
 `
 
 const StyledHat = styled(Graduation)`
+  position: absolute;
+  top: 2px;
+  right: -45px;
   display: block;
   width: 32px;
   path {
@@ -43,9 +46,11 @@ const Academics = ({ education }) => {
         return (
           <StyledItem key={s.title}>
             <div className="list-item__study-item-wrapper">
-              {s.success ? <StyledHat /> : null}
               <div className="list-item__study-item-content">
-                <h4>{s.title}</h4>
+                <h4>
+                  {s.title}
+                  {s.success ? <StyledHat /> : null}
+                </h4>
                 <p>
                   {s.place} - {s.organisation}
                 </p>
