@@ -28,8 +28,6 @@ const HeroImage = styled(BackgroundImage)`
 const StyledHero = styled.div`
   height: 650px;
   min-height: 100vh;
-  margin-left: -12.5%;
-  margin-right: -12.5%;
   background-color: blue;
   color: var(--color-white);
 
