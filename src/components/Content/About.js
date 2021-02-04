@@ -10,10 +10,11 @@ import {
   StyledAboutContent,
   StyledAboutList,
 } from "../../style/elements/about/StyledAbout"
+import SkillSet from "./SkillSet"
 
 const About = () => {
   const { t } = useTranslation()
-  const articleRef = listContent.map((a) => {
+  const cardRef = listContent.map((a) => {
     a = React.createRef()
     return a
   })
@@ -23,12 +24,11 @@ const About = () => {
 
   // Index of clicked target toggles active class
   const handleClick = (e, i) => {
-    e.preventDefault()
-    articleRef[i].current.scrollIntoView({ behavior: "smooth" })
-    setActiveLink(i)
-    if (articleRef[0] && i > activeLink) {
+    if (e.target.value !== activeLink) {
       e.preventDefault()
-      setActiveLink(0)
+      e.stopPropagation()
+      setActiveLink(i)
+      cardRef[i].current.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -98,6 +98,7 @@ const About = () => {
                     }`}
                     href={`/#${a.tag}`}
                     key={a.tag}
+                    value={i}
                     onClick={(e) => handleClick(e, i)}
                   >
                     {t(a.title)}
@@ -114,7 +115,7 @@ const About = () => {
                 <li
                   className="list-item__card"
                   key={Math.random() * 10}
-                  ref={articleRef[i]}
+                  ref={cardRef[i]}
                 >
                   <div className="list-item__card-marker"></div>
                   <article className="list-item__article">
@@ -133,6 +134,7 @@ const About = () => {
                     ) : (
                       <span></span>
                     )}
+                    {i === 1 ? <SkillSet /> : <span></span>}
                   </article>
                 </li>
               )
