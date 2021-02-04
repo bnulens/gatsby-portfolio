@@ -1,8 +1,7 @@
 import React from "react"
-import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 
-import Graduation from "../../icons/graduation2.svg"
+import Graduation from "../../assets/icons/misc/graduation2.svg"
 
 const StyledItem = styled.li`
   margin-top: 32px;
@@ -10,6 +9,7 @@ const StyledItem = styled.li`
 
   .list-item__study-item-wrapper {
     display: flex;
+    align-items: center;
     width: 100%;
     .list-item__study-item-content {
       display: flex;
@@ -37,7 +37,6 @@ const StyledHat = styled(Graduation)`
 `
 
 const Academics = ({ education }) => {
-  const { t } = useTranslation()
   return (
     <ul className="list-item__studies">
       {education.map((s) => {
