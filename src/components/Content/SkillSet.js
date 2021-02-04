@@ -6,7 +6,7 @@ const SkillGrid = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
+  gap: 30px 30px;
   grid-template-areas:
     ". . ."
     ". . ."
@@ -14,12 +14,33 @@ const SkillGrid = styled.ul`
   width: 100%;
   margin-top: 32px;
 `
+const SkillInfo = styled.span`
+  position: absolute;
+  top: 120%;
+  display: block;
+  height: auto;
+  width: 100px;
+  margin: 0 auto;
+  padding: 16px 8px 10px;
+  transition: opacity ease-in 0.3s;
+  opacity: 0;
+  z-index: 50;
+`
 const SkillIcon = styled.img`
   display: block;
   width: 55px;
+  z-index: 50;
 `
-const SkillInfo = styled.span``
-const SkillItem = styled.div``
+const SkillItem = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${SkillIcon}:hover + ${SkillInfo} {
+    opacity: 1;
+  }
+`
 const SkillSet = () => {
   const data = useStaticQuery(graphql`
     query iconQuery {
