@@ -49,6 +49,6 @@ export const StyledFooter = styled.footer`
       }
     }
   }
-  @media ${(props) => props.theme.mediaQueries.medium} {
+  @media only screen and (max-width: 767px) {
   }
 `

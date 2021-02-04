@@ -70,7 +70,7 @@ export const StyledAboutContent = styled.section`
           }
         }
       }
-      @media ${(props) => props.theme.mediaQueries.medium} {
+      @media only screen and (max-width: 767px) {
         position: relative;
         width: 100%;
 
@@ -91,7 +91,7 @@ export const StyledAboutContent = styled.section`
       margin-top: -550px;
       margin-bottom: 10%;
 
-      @media ${(props) => props.theme.mediaQueries.medium} {
+      @media only screen and (max-width: 767px) {
         display: block;
         width: 100%;
         margin: 0;
@@ -140,7 +140,7 @@ export const StyledAboutList = styled.ul`
       }
     }
 
-    @media ${(props) => props.theme.mediaQueries.medium} {
+    @media only screen and (max-width: 767px) {
       padding: 0;
       margin-bottom: 100px;
 

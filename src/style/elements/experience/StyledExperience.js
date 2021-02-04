@@ -58,7 +58,7 @@ export const StyledExperience = styled.section`
       }
     }
   }
-  @media ${(props) => props.theme.mediaQueries.medium} {
+  @media only screen and (max-width: 767px) {
     margin: 8vh 0;
 
     .experience__container {
@@ -130,7 +130,7 @@ export const StyledPeerReview = styled.article`
     }
   }
 
-  @media ${(props) => props.theme.mediaQueries.medium} {
+  @media only screen and (max-width: 767px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
