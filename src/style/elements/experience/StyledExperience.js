@@ -75,11 +75,11 @@ export const StyledExperience = styled.section`
 export const StyledPeerReview = styled.article`
   display: flex;
   flex-direction: row;
-  width: 75%;
+  width: 95%;
   padding: 24px;
   margin: 0 auto;
   color: var(--color-grey);
-  max-width: 75%;
+  max-width: 700px;
   margin: 48px auto;
   -webkit-box-shadow: 0px 0px 18px -4px #e2e2e2;
   -moz-box-shadow: 0px 0px 18px -4px #e2e2e2;
