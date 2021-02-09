@@ -9,7 +9,11 @@ import Footer from "../../components/footer"
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 90%;
+
+  @media screen and (min-width: 768px) {
+    max-width: 80%;
+  }
 `
 
 export default function Layout({ children }) {
