@@ -72,7 +72,7 @@ const SkillSet = () => {
     <SkillGrid>
       {filteredIcons.map((icn, i) => {
         return (
-          <SkillItem>
+          <SkillItem key={i}>
             <SkillInfo role="image">{icn.base.replace(".svg", "")}</SkillInfo>
             <SkillIcon src={icn.publicURL} alt={`skill-icon${i}`} key={i} />
           </SkillItem>
