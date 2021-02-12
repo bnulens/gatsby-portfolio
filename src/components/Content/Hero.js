@@ -28,7 +28,7 @@ const HeroImage = styled(BackgroundImage)`
 const StyledHero = styled.div`
   height: 650px;
   min-height: 100vh;
-  background-color: blue;
+  background-color: #7a4767;
   color: var(--color-white);
 
   h1 {
