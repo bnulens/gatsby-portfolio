@@ -6,6 +6,7 @@ import "../../i18n"
 
 import Header from "../../components/header"
 import Footer from "../../components/footer"
+import ClientOnly from "../../components/ClientOnly"
 
 const Container = styled.div`
   margin: 0 auto;
@@ -18,13 +19,13 @@ const Container = styled.div`
 
 export default function Layout({ children }) {
   return (
-    <>
+    <ClientOnly>
       <Header />
       <Container>
         <main>{children}</main>
       </Container>
       <Footer />
-    </>
+    </ClientOnly>
   )
 }
 
