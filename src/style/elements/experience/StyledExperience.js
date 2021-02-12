@@ -59,7 +59,8 @@ export const StyledExperience = styled.section`
     }
   }
   @media only screen and (max-width: 767px) {
-    margin: 8vh 0;
+    margin: 8vh auto;
+    max-width: 90%;
 
     .experience__container {
       .experience__header {
