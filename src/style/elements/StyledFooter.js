@@ -50,5 +50,6 @@ export const StyledFooter = styled.footer`
     }
   }
   @media only screen and (max-width: 767px) {
+    max-width: 100%;
   }
 `
