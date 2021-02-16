@@ -1,4 +1,5 @@
 import React from "react"
+import "../i18n"
 
 import SEO from "../components/seo"
 import Hero from "../components/Content/Hero"

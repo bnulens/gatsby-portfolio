@@ -6,6 +6,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 
 const HeroImage = styled(BackgroundImage)`
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -28,7 +29,8 @@ const HeroImage = styled(BackgroundImage)`
 const StyledHero = styled.div`
   height: 650px;
   min-height: 100vh;
-  background-color: #7a4767;
+  margin-left: -12.5%;
+  margin-right: -12.5%;
   color: var(--color-white);
 
   h1 {

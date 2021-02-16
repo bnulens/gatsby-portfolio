@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 `
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <ClientOnly>
       <Header />
@@ -32,3 +32,5 @@ export default function Layout({ children }) {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+export default Layout
