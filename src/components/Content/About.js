@@ -83,7 +83,7 @@ const About = () => {
       <div className="content-container">
         <div className="content-left">
           <h3>{t("about.whyMe")}</h3>
-          <ul>
+          <ul className="content-left__list">
             {listContent.map((a, i) => {
               return (
                 <li className="content-left__bullet" key={i}>

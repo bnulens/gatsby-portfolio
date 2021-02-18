@@ -15,11 +15,11 @@ const Theme = {
   },
 
   mediaQueries: {
-    smallest: `only screen and (max-width: 375px)`,
-    small: `only screen and (max-width: 468px)`,
-    medium: `only screen and (max-width: 767px)`,
-    large: `only screen and (max-width: 1080px)`,
-    largest: `only screen and (max-width: 1280px)`,
+    smallest: `screen and (min-width: 375px)`,
+    small: `screen and (min-width: 468px)`,
+    medium: `screen and (min-width: 767px)`,
+    large: `screen and (min-width: 1080px)`,
+    largest: `screen and (min-width: 1280px)`,
   },
 }
 

@@ -1,14 +1,13 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const StyledHeader = styled.header`
   position: absolute;
-  top: 6%;
-  left: 10%;
+  top: 5vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
-  max-width: 80vw;
+  max-width: 100vw;
   z-index: 100;
 
   .header__inner-wrapper {
@@ -16,48 +15,23 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 80vw;
+    width: 100%;
+    max-width: 90%;
     margin: 0 auto;
+  }
 
-    nav.header__social-nav {
-      display: flex;
-      width: 50%;
-      a.header__social-link {
-        margin-right: 20px;
-        img.header__social-icon {
-          display: block;
-          height: 30px;
-          width: 30px;
-          transition: filter ease 0.4s;
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    max-width: 1080px;
+  }
+`
 
-          :hover {
-            filter: invert(100%);
-          }
-        }
-      }
-    }
+export const NavLink = styled(Link)`
+  font-size: 12px;
+  font-weight: 300;
+  margin-right: 24px;
+  color: var(--color-white);
 
-    .header__site-nav {
-      display: flex;
-      justify-content: flex-end;
-      width: 50%;
-
-      a.header__site-nav-link {
-        position: relative;
-        width: auto;
-        margin-right: 14px;
-        padding: 8px;
-        color: white;
-        background: linear-gradient(to left, transparent 50%, black 50%);
-        background-size: 200% 100%;
-        background-position: right bottom;
-        transition: all ease-in 0.4s;
-
-        :hover {
-          color: white;
-          background-position: left bottom;
-        }
-      }
-    }
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    font-size: 16px;
   }
 `

@@ -1,51 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useTranslation } from "react-i18next"
-import styled from "styled-components"
 
-import BackgroundImage from "gatsby-background-image"
-
-const HeroImage = styled(BackgroundImage)`
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  .hero-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    align-self: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    max-width: 80%;
-  }
-`
-
-const StyledHero = styled.div`
-  height: 650px;
-  min-height: 100vh;
-  margin-left: -12.5%;
-  margin-right: -12.5%;
-  color: var(--color-white);
-
-  h1 {
-    font-size: 72px;
-    font-weight: 400;
-    margin-bottom: 24px;
-    line-height: 72px;
-  }
-
-  h2 {
-    font-size: 18px;
-    font-weight: 400;
-    max-width: 350px;
-  }
-`
+import { HeroImage, StyledHero } from "../../style/elements/StyledHero"
 
 const Hero = () => {
   const { t } = useTranslation()

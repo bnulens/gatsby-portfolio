@@ -10,10 +10,12 @@ import ClientOnly from "../../components/ClientOnly"
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 90%;
+  width: 100%;
 
-  @media screen and (min-width: 768px) {
-    max-width: 80%;
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    max-width: 1080px;
+    margin-left: -12.5%;
+    margin-right: -12.5%;
   }
 `
 

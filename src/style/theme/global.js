@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Epilogue', 'Fraunces', sans-serif;
         -webkit-font-smoothin: antialiased;
         -moz-osx-font-smoothing: grayscaled;
     }
@@ -42,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
     }
 
-    a, input, textarea,button {
+    a, input, textarea, button {
         outline: none;
         text-decoration: none;
         font-family: inherit;
@@ -75,7 +75,7 @@ export const GlobalStyle = createGlobalStyle`
         border-spacing: 0;
     }
 
-    p{
+    p {
         line-height: 1.8;
     }
 `

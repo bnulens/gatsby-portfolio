@@ -1,17 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 
 import { navLinks } from "../info/textContents"
-import { StyledHeader } from "../style/elements/StyledHeader"
+import { StyledHeader, NavLink } from "../style/elements/StyledHeader"
 
 import LanguageSwitcher from "./LanguageSwitcher"
-
-const NavLink = styled(Link)`
-  color: var(--color-white);
-  margin-left: 24px;
-`
 
 const Header = () => {
   const { t } = useTranslation()

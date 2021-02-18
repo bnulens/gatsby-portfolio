@@ -3,39 +3,49 @@ import styled from "styled-components"
 
 import Graduation from "../../assets/icons/misc/graduation2.svg"
 
+const StyledHat = styled(Graduation)``
+
 const StyledItem = styled.li`
-  margin-top: 32px;
+  margin-top: 24px;
   font-weight: 100;
 
   .list-item__study-item-wrapper {
     display: flex;
-    align-items: center;
-    width: 100%;
+    justify-content: space-between;
+
     .list-item__study-item-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      width: 90%;
+
       h4 {
-        position: relative;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 100;
         text-align: left;
       }
+
       p {
+        font-size: 14px;
         color: var(--color-silver);
       }
     }
-  }
-`
 
-const StyledHat = styled(Graduation)`
-  position: absolute;
-  top: 2px;
-  right: -45px;
-  display: block;
-  width: 32px;
-  path {
-    fill: var(--color-silver);
+    ${StyledHat} {
+      display: block;
+      width: 10%;
+      height: auto;
+
+      path {
+        fill: var(--color-silver);
+      }
+    }
+
+    .blank {
+      display: inline-block;
+      width: 10%;
+      height: auto;
+    }
   }
 `
 
@@ -47,14 +57,12 @@ const Academics = ({ education }) => {
           <StyledItem key={s.title}>
             <div className="list-item__study-item-wrapper">
               <div className="list-item__study-item-content">
-                <h4>
-                  {s.title}
-                  {s.success ? <StyledHat /> : null}
-                </h4>
+                <h4>{s.title}</h4>
                 <p>
                   {s.place} - {s.organisation}
                 </p>
               </div>
+              {s.success ? <StyledHat /> : <span className="blank"></span>}
             </div>
           </StyledItem>
         )

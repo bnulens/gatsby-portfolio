@@ -9,9 +9,12 @@ const Wrapper = styled.div`
 `
 
 const LanguageBlock = styled.button`
-  margin-right: 6px;
-  padding: 4px 5px;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  padding: 4px;
   border-radius: 50%;
+  text-align: center;
   background: transparent;
   color: var(--color-white);
   transition: all ease 0.3s;

@@ -4,37 +4,28 @@ export const StyledAboutContent = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  align-items: center;
   color: white;
   background-color: var(--color-marine);
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100vw;
 
   .content-container {
     position: relative;
     margin: 0 auto;
     width: 100%;
-    max-width: 80vw;
+    max-width: 90%;
 
     .content-left {
-      display: block;
-      position: sticky;
-      position: -webkit-sticky;
-      top: 25%;
-      margin: 10% 0 25% 0;
-      width: 40%;
+      display: none;
 
       h3 {
-        font-size: 4vw;
+        font-size: 48px;
         font-weight: 400;
       }
 
-      ul {
+      .content-left__list {
         display: flex;
         flex-direction: column;
-        margin-top: 40px;
 
         .content-left__bullet {
           display: flex;
@@ -70,31 +61,30 @@ export const StyledAboutContent = styled.section`
           }
         }
       }
-      @media only screen and (max-width: 767px) {
-        position: relative;
-        width: 100%;
-
+      @media ${(props) => props.theme.mediaQueries.medium} {
+        display: block;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 20%;
+        margin: 10% 0 25% 0;
+        width: 40%;
         h1 {
-          font-size: 8vw;
-        }
-
-        ul {
-          display: none;
+          font-size: 34px;
         }
       }
     }
 
     .content-right {
-      display: inline-block;
-      width: 60%;
-      margin-left: 50%;
-      margin-top: -550px;
-      margin-bottom: 10%;
+      width: 100%;
+      max-width: 100vw;
 
-      @media only screen and (max-width: 767px) {
+      @media ${(props) => props.theme.mediaQueries.medium} {
         display: block;
-        width: 100%;
+        width: 60%;
         margin: 0;
+        margin-left: 50%;
+        margin-top: -580px;
+        margin-bottom: 10%;
       }
     }
   }
@@ -102,20 +92,15 @@ export const StyledAboutContent = styled.section`
 
 export const StyledAboutList = styled.ul`
   display: block;
+  margin: 0 auto;
 
   .list-item__card {
     position: relative;
     display: block;
-    min-height: 500px;
-    padding: 0 24px;
-    margin-bottom: 100px;
+    margin: 100px 0px;
 
     .list-item__card-marker {
-      position: absolute;
-      top: 25%;
-      left: 0;
-      height: 10%;
-      width: 100%;
+      display: none;
     }
 
     .list-item__article {
@@ -126,35 +111,45 @@ export const StyledAboutList = styled.ul`
 
       .list-item__image {
         display: block;
-        width: 10vw;
+        margin: 0 auto;
       }
       .list-item__title {
         display: block;
-        font-size: 4vw;
-        font-weight: 400;
+        font-size: 10vw;
+        font-weight: 300;
         margin-top: 24px;
       }
       .list-item__text {
         display: inline-block;
-        text-align: left;
+        font-size: 4vw;
+        font-weight: 100;
+        text-align: justify;
       }
     }
 
-    @media only screen and (max-width: 767px) {
+    @media ${(props) => props.theme.mediaQueries.medium} {
       padding: 0;
       margin-bottom: 100px;
 
+      .list-item__card-marker {
+        position: absolute;
+        top: 25%;
+        left: 0;
+        height: 10%;
+        width: 100%;
+      }
       .list-item__article {
         .list-item__image {
           width: 25vw;
           margin-bottom: 2vh;
         }
         .list-item__title {
-          font-size: 12vw;
+          font-size: 56px;
         }
         .list-item__text {
           display: inline-block;
           text-align: justify;
+          font-size: 16px;
         }
       }
     }
