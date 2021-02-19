@@ -66,7 +66,7 @@ export const StyledExperience = styled.section`
     }
   }
 
-  @media ${(props) => props.theme.mediaQueries.medium} {
+  @media screen and (min-width: 768px) {
     position: relative;
     width: 100vw;
 
@@ -157,7 +157,7 @@ export const StyledPeerReview = styled.article`
     }
   }
 
-  @media ${(props) => props.theme.mediaQueries.medium} {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
     align-items: center;

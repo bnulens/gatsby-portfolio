@@ -17,7 +17,7 @@ export const StyledHeader = styled.header`
     max-width: 90%;
     margin: 0 auto;
 
-    @media ${(props) => props.theme.mediaQueries.medium} {
+    @media screen and (min-width: 768px) {
       margin: 0 auto;
       width: 90%;
       max-width: 1080px;
@@ -31,7 +31,7 @@ export const NavLink = styled(Link)`
   margin-right: 24px;
   color: var(--color-white);
 
-  @media ${(props) => props.theme.mediaQueries.medium} {
+  @media screen and (min-width: 768px) {
     font-size: 16px;
   }
 `

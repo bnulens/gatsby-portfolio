@@ -30,7 +30,7 @@ const StyledItem = styled.li`
         color: var(--color-silver);
       }
 
-      @media ${(props) => props.theme.mediaQueries.medium} {
+      @media screen and (min-width: 768px) {
         h4 {
           font-size: 32px;
         }

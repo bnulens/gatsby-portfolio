@@ -33,7 +33,7 @@ export const HeroWrapper = styled.div`
       text-align: justify;
     }
 
-    @media ${(props) => props.theme.mediaQueries.medium} {
+    @media screen and (min-width: 768px) {
       left: -50%;
       right: -50%;
       padding: 24px;

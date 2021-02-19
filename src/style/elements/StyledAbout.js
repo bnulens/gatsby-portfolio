@@ -18,7 +18,7 @@ export const StyledAboutContent = styled.section`
     .content-left {
       display: none;
 
-      @media ${(props) => props.theme.mediaQueries.medium} {
+      @media screen and (min-width: 768px) {
         display: block;
         position: sticky;
         position: -webkit-sticky;
@@ -75,7 +75,7 @@ export const StyledAboutContent = styled.section`
     .content-right {
       width: 100%;
 
-      @media ${(props) => props.theme.mediaQueries.medium} {
+      @media screen and (min-width: 768px) {
         display: block;
         max-width: 50%;
         margin: 0;
@@ -84,7 +84,7 @@ export const StyledAboutContent = styled.section`
         margin-bottom: 10%;
       }
     }
-    @media ${(props) => props.theme.mediaQueries.medium} {
+    @media screen and (min-width: 768px) {
       width: 90%;
       max-width: 1080px;
     }
@@ -130,7 +130,7 @@ export const StyledAboutList = styled.ul`
       }
     }
 
-    @media ${(props) => props.theme.mediaQueries.medium} {
+    @media screen and (min-width: 768px) {
       padding: 0;
       margin-bottom: 100px;
 

@@ -12,7 +12,7 @@ const Container = styled.div`
   margin: 0 auto;
   width: 100%;
 
-  @media ${(props) => props.theme.mediaQueries.medium} {
+  @media screen and (min-width: 768px) {
     margin: 0;
     max-width: 1080px;
     width: 100%;

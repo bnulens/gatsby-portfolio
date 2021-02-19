@@ -17,7 +17,7 @@ const Theme = {
   mediaQueries: {
     smallest: `screen and (min-width: 375px)`,
     small: `screen and (min-width: 468px)`,
-    medium: `screen and (min-width: 767px)`,
+    medium: `screen and (min-width: 768px)`,
     large: `screen and (min-width: 1080px)`,
     largest: `screen and (min-width: 1280px)`,
   },
