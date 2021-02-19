@@ -2,13 +2,19 @@ import styled from "styled-components"
 import { Image } from "cloudinary-react"
 
 export const StyledExperience = styled.section`
+  position: relative;
   display: block;
-  margin: 56px 0;
+  height: 100%;
+  margin: 120px auto;
 
   .experience__container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 90%;
 
     .experience__header {
       display: flex;
@@ -17,15 +23,16 @@ export const StyledExperience = styled.section`
       text-align: center;
 
       h3 {
-        font-size: 4vw;
-        font-weight: 400;
-        max-width: 700px;
+        font-size: 42px;
+        font-weight: 700;
       }
 
       p {
-        max-width: 750px;
         margin-top: 12px;
-        color: var(--color-black);
+        font-size: 18px;
+        text-align: justify;
+        color: var(--color-coal);
+        line-height: 1.4;
       }
     }
 
@@ -34,13 +41,13 @@ export const StyledExperience = styled.section`
       align-items: center;
       justify-content: space-between;
       margin: 24px auto 0px;
-      width: 50%;
+      width: 100%;
 
       a.link__record-store {
         color: white;
         border-radius: 4px;
         background-color: var(--color-purple);
-        width: 100%;
+        width: 50%;
         padding: 8px;
         margin-right: 12px;
         text-align: center;
@@ -51,23 +58,47 @@ export const StyledExperience = styled.section`
         color: var(--color-purple);
         border: 1px solid var(--color-purple);
         border-radius: 4px;
-        width: 100%;
+        width: 50%;
         padding: 8px;
         margin-left: 12px;
         text-align: center;
       }
     }
   }
-  @media only screen and (max-width: 767px) {
-    margin: 8vh auto;
-    max-width: 90%;
+
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    position: relative;
+    width: 100vw;
 
     .experience__container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+
       .experience__header {
         text-align: justify;
+
+        h3 {
+          font-size: 56px;
+        }
+
+        p {
+          width: 90%;
+          max-width: 1080px;
+          font-size: 24px;
+          font-weight: 300;
+        }
       }
       .experience__links {
-        width: 100%;
+        justify-content: center;
+        margin-top: 48px;
+
+        a.link__record-store {
+          width: 25%;
+        }
+        a.link__motivation {
+          width: 25%;
+        }
       }
     }
   }
@@ -75,13 +106,10 @@ export const StyledExperience = styled.section`
 
 export const StyledPeerReview = styled.article`
   display: flex;
-  flex-direction: row;
-  width: 95%;
+  flex-direction: column;
   padding: 24px;
-  margin: 0 auto;
+  margin: 82px auto;
   color: var(--color-grey);
-  max-width: 700px;
-  margin: 48px auto;
   -webkit-box-shadow: 0px 0px 18px -4px #e2e2e2;
   -moz-box-shadow: 0px 0px 18px -4px #e2e2e2;
   box-shadow: 0px 0px 18px -4px #e2e2e2;
@@ -91,13 +119,12 @@ export const StyledPeerReview = styled.article`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30%;
     padding: 16px;
 
     img:first-child {
       display: block;
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
     }
 
@@ -114,8 +141,7 @@ export const StyledPeerReview = styled.article`
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    border-left: 2px solid var(--color-lightgrey);
-    width: 700px;
+    border-top: 2px solid var(--color-lightgrey);
     padding: 16px;
     font-size: 16px;
 
@@ -131,22 +157,22 @@ export const StyledPeerReview = styled.article`
     }
   }
 
-  @media only screen and (max-width: 767px) {
-    flex-direction: column;
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: 10vh auto;
-    max-width: 100%;
+    margin: 100px auto;
+    width: 90%;
+    max-width: 1080px;
 
     .review__profile {
-      width: 100%;
+      width: 20%;
     }
 
     .review__text {
-      border-top: 2px solid var(--color-lightgrey);
-      border-left: none;
-      width: 100%;
+      border-top: none;
+      border-left: 2px solid var(--color-lightgrey);
+      width: 80%;
     }
   }
 `

@@ -1,7 +1,7 @@
 import React from "react"
 
 import PeerReviews from "./PeerReviews"
-import { StyledExperience } from "../../style/elements/experience/StyledExperience"
+import { StyledExperience } from "../../style/elements/StyledExperience"
 import { useTranslation } from "react-i18next"
 
 const Experience = () => {

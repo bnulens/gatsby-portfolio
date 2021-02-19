@@ -9,7 +9,7 @@ import { listContent } from "../../info/textContents"
 import {
   StyledAboutContent,
   StyledAboutList,
-} from "../../style/elements/about/StyledAbout"
+} from "../../style/elements/StyledAbout"
 import SkillSet from "./SkillSet"
 
 const About = () => {

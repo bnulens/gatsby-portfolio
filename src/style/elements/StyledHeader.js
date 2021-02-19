@@ -6,22 +6,22 @@ export const StyledHeader = styled.header`
   top: 5vh;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  max-width: 100vw;
+  width: 100vw;
   z-index: 100;
 
   .header__inner-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
-  }
 
-  @media ${(props) => props.theme.mediaQueries.medium} {
-    max-width: 1080px;
+    @media ${(props) => props.theme.mediaQueries.medium} {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 1080px;
+    }
   }
 `
 

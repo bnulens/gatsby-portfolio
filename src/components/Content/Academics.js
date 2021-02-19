@@ -20,14 +20,24 @@ const StyledItem = styled.li`
       width: 90%;
 
       h4 {
-        font-size: 16px;
-        font-weight: 100;
+        font-size: 24px;
+        font-weight: 300;
         text-align: left;
       }
 
       p {
-        font-size: 14px;
+        font-size: 18px;
         color: var(--color-silver);
+      }
+
+      @media ${(props) => props.theme.mediaQueries.medium} {
+        h4 {
+          font-size: 32px;
+        }
+
+        p {
+          font-size: 24px;
+        }
       }
     }
 

@@ -13,9 +13,9 @@ const Container = styled.div`
   width: 100%;
 
   @media ${(props) => props.theme.mediaQueries.medium} {
+    margin: 0;
     max-width: 1080px;
-    margin-left: -12.5%;
-    margin-right: -12.5%;
+    width: 100%;
   }
 `
 

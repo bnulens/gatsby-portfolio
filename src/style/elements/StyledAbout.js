@@ -18,74 +18,75 @@ export const StyledAboutContent = styled.section`
     .content-left {
       display: none;
 
-      h3 {
-        font-size: 48px;
-        font-weight: 400;
-      }
-
-      .content-left__list {
-        display: flex;
-        flex-direction: column;
-
-        .content-left__bullet {
-          display: flex;
-          align-items: center;
-          font-size: 38px;
-
-          .content-left__bullet-index {
-            display: inline-block;
-            margin-right: 24px;
-            font-weight: 100;
-            color: var(--color-silver);
-
-            &.active {
-              font-weight: 400;
-              color: var(--color-white);
-            }
-            &.inactive {
-              filter: opacity(0.5);
-            }
-          }
-
-          .content-left__bullet-link {
-            font-weight: 100;
-            color: var(--color-silver);
-
-            &.active {
-              font-weight: 400;
-              color: var(--color-white);
-            }
-            &.inactive {
-              filter: opacity(0.5);
-            }
-          }
-        }
-      }
       @media ${(props) => props.theme.mediaQueries.medium} {
         display: block;
         position: sticky;
         position: -webkit-sticky;
-        top: 20%;
-        margin: 10% 0 25% 0;
-        width: 40%;
-        h1 {
-          font-size: 34px;
+        top: 25%;
+        margin: 15% 0 25% 0;
+        width: 50%;
+
+        h3 {
+          font-size: 48px;
+          font-weight: 400;
+        }
+
+        .content-left__list {
+          display: flex;
+          flex-direction: column;
+
+          .content-left__bullet {
+            display: flex;
+            align-items: center;
+            font-size: 38px;
+
+            .content-left__bullet-index {
+              display: inline-block;
+              margin-right: 24px;
+              font-weight: 100;
+              color: var(--color-silver);
+
+              &.active {
+                font-weight: 300;
+                color: var(--color-white);
+              }
+              &.inactive {
+                filter: opacity(0.5);
+              }
+            }
+
+            .content-left__bullet-link {
+              font-weight: 100;
+              color: var(--color-silver);
+
+              &.active {
+                font-weight: 400;
+                color: var(--color-white);
+              }
+              &.inactive {
+                filter: opacity(0.5);
+              }
+            }
+          }
         }
       }
     }
 
     .content-right {
       width: 100%;
-      max-width: 100vw;
 
       @media ${(props) => props.theme.mediaQueries.medium} {
         display: block;
-        width: 60%;
+        max-width: 50%;
         margin: 0;
-        margin-left: 50%;
-        margin-top: -580px;
+        margin-left: 48%;
+        margin-top: -500px;
         margin-bottom: 10%;
       }
+    }
+    @media ${(props) => props.theme.mediaQueries.medium} {
+      width: 90%;
+      max-width: 1080px;
     }
   }
 `
@@ -97,7 +98,7 @@ export const StyledAboutList = styled.ul`
   .list-item__card {
     position: relative;
     display: block;
-    margin: 100px 0px;
+    margin: 120px 0px;
 
     .list-item__card-marker {
       display: none;
@@ -106,22 +107,24 @@ export const StyledAboutList = styled.ul`
     .list-item__article {
       display: flex;
       flex-direction: column;
+      align-items: center;
       text-align: justify;
       margin-bottom: 24px;
 
       .list-item__image {
         display: block;
+        width: 100%;
         margin: 0 auto;
       }
       .list-item__title {
         display: block;
-        font-size: 10vw;
+        font-size: 42px;
         font-weight: 300;
         margin-top: 24px;
       }
       .list-item__text {
         display: inline-block;
-        font-size: 4vw;
+        font-size: 14px;
         font-weight: 100;
         text-align: justify;
       }
@@ -132,6 +135,7 @@ export const StyledAboutList = styled.ul`
       margin-bottom: 100px;
 
       .list-item__card-marker {
+        display: block;
         position: absolute;
         top: 25%;
         left: 0;
@@ -139,9 +143,11 @@ export const StyledAboutList = styled.ul`
         width: 100%;
       }
       .list-item__article {
+        align-items: flex-start;
+        margin-bottom: 200px;
+
         .list-item__image {
-          width: 25vw;
-          margin-bottom: 2vh;
+          display: block;
         }
         .list-item__title {
           font-size: 56px;

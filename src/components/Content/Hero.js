@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useTranslation } from "react-i18next"
 
-import { HeroImage, StyledHero } from "../../style/elements/StyledHero"
+import { HeroImage, HeroWrapper } from "../../style/elements/StyledHero"
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -21,24 +21,25 @@ const Hero = () => {
 
   if (!data?.file?.childImageSharp?.fluid) {
     return (
-      <StyledHero>
-        <h1>{t("header.mainTitle")}</h1>
-        <h2>{t("header.catchTitle")}</h2>
-      </StyledHero>
+      <HeroWrapper>
+        <div className="hero-title__wrapper">
+          <h1>{t("header.mainTitle")}</h1>
+          <h2>{t("header.catchTitle")}</h2>
+        </div>
+      </HeroWrapper>
     )
   }
 
   const imageData = data.file.childImageSharp.fluid
 
   return (
-    <StyledHero>
-      <HeroImage fluid={imageData} effect="sharpened">
-        <div className="hero-wrapper">
-          <h1>{t("header.mainTitle")}</h1>
-          <h2>{t("header.catchTitle")}</h2>
-        </div>
-      </HeroImage>
-    </StyledHero>
+    <HeroWrapper>
+      <HeroImage fluid={imageData} effect="sharpened" />
+      <div className="hero-title__wrapper">
+        <h1>{t("header.mainTitle")}</h1>
+        <h2>{t("header.catchTitle")}</h2>
+      </div>
+    </HeroWrapper>
   )
 }
 

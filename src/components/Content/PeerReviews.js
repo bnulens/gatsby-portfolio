@@ -8,7 +8,7 @@ import {
   PeerAvatar,
   CompanyLogo,
   DefaultCompany,
-} from "../../style/elements/experience/StyledExperience"
+} from "../../style/elements/StyledExperience"
 import { reviewContent } from "../../info/textContents"
 
 const PeerReviews = () => {

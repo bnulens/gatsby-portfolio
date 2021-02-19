@@ -4,7 +4,7 @@ export const StyledFooter = styled.footer`
   height: 200px;
   padding: 32px;
   color: white;
-  background-color: var(--color-coal);
+  background-color: var(--color-black);
 
   .footer__wrapper {
     display: flex;
@@ -13,7 +13,6 @@ export const StyledFooter = styled.footer`
     align-items: flex-start;
     margin: 0 auto;
     height: 100%;
-    max-width: 80%;
 
     .footer__brief {
       h3 {
@@ -48,8 +47,8 @@ export const StyledFooter = styled.footer`
         }
       }
     }
-  }
-  @media only screen and (max-width: 767px) {
-    max-width: 100%;
+    @media ${(props) => props.theme.mediaQueries.medium} {
+      max-width: 1080px;
+    }
   }
 `
