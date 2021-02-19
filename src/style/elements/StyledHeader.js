@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 export const StyledHeader = styled.header`
   position: absolute;
   top: 5vh;
+  left: 0;
   display: flex;
   justify-content: space-between;
   width: 100vw;

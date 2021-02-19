@@ -31,7 +31,7 @@ export const StyledExperience = styled.section`
         margin-top: 12px;
         font-size: 18px;
         text-align: justify;
-        color: var(--color-coal);
+        color: var(--color-grey);
         line-height: 1.4;
       }
     }
@@ -40,7 +40,7 @@ export const StyledExperience = styled.section`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 24px auto 0px;
+      margin: 40px auto;
       width: 100%;
 
       a.link__record-store {
@@ -91,7 +91,7 @@ export const StyledExperience = styled.section`
       }
       .experience__links {
         justify-content: center;
-        margin-top: 48px;
+        margin-top: 56px;
 
         a.link__record-store {
           width: 25%;

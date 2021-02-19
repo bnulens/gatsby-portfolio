@@ -125,8 +125,9 @@ export const StyledAboutList = styled.ul`
       .list-item__text {
         display: inline-block;
         font-size: 14px;
-        font-weight: 100;
+        font-weight: 300;
         text-align: justify;
+        color: var(--color-silver);
       }
     }
 

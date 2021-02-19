@@ -7,7 +7,6 @@ const StyledHat = styled(Graduation)``
 
 const StyledItem = styled.li`
   margin-top: 24px;
-  font-weight: 100;
 
   .list-item__study-item-wrapper {
     display: flex;
@@ -27,7 +26,9 @@ const StyledItem = styled.li`
 
       p {
         font-size: 18px;
+        font-weight: 300;
         color: var(--color-silver);
+        filter: opacity(0.8);
       }
 
       @media screen and (min-width: 768px) {

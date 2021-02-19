@@ -9,8 +9,8 @@ export const HeroWrapper = styled.div`
 
   .hero-title__wrapper {
     position: absolute;
-    top: 40vh;
-    left: 5vw;
+    top: 32%;
+    left: 5%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -20,7 +20,7 @@ export const HeroWrapper = styled.div`
     margin: 0 auto;
 
     h1 {
-      font-size: 48px;
+      font-size: 56px;
       font-weight: 400;
       margin-bottom: 12px;
       line-height: 60px;
@@ -28,23 +28,23 @@ export const HeroWrapper = styled.div`
 
     h2 {
       font-size: 18px;
-      font-weight: 100;
-      max-width: 520px;
+      font-weight: 300;
       text-align: justify;
     }
 
     @media screen and (min-width: 768px) {
-      left: -50%;
+      left: -52%;
       right: -50%;
       padding: 24px;
       max-width: 1080px;
 
       h1 {
-        font-size: 72px;
+        font-size: 82px;
       }
 
       h2 {
         font-size: 20px;
+        width: 50%;
       }
     }
   }
