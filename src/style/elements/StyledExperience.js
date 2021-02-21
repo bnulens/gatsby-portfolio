@@ -113,6 +113,7 @@ export const StyledPeerReview = styled.article`
   -webkit-box-shadow: 0px 0px 18px -4px #e2e2e2;
   -moz-box-shadow: 0px 0px 18px -4px #e2e2e2;
   box-shadow: 0px 0px 18px -4px #e2e2e2;
+  max-width: 90%;
 
   .review__profile {
     display: flex;
@@ -170,9 +171,9 @@ export const StyledPeerReview = styled.article`
     }
 
     .review__text {
+      width: 80%;
       border-top: none;
       border-left: 2px solid var(--color-lightgrey);
-      width: 80%;
     }
   }
 `

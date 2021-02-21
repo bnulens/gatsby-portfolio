@@ -27,7 +27,7 @@ export const StyledAboutContent = styled.section`
         width: 50%;
 
         h3 {
-          font-size: 48px;
+          font-size: 5vw;
           font-weight: 400;
         }
 
@@ -38,11 +38,49 @@ export const StyledAboutContent = styled.section`
           .content-left__bullet {
             display: flex;
             align-items: center;
-            font-size: 38px;
+            font-size: 4vw;
 
             .content-left__bullet-index {
               display: inline-block;
               margin-right: 24px;
+              font-weight: 100;
+              color: var(--color-silver);
+
+              &.active {
+                font-weight: 300;
+                color: var(--color-white);
+              }
+              &.inactive {
+                filter: opacity(0.5);
+              }
+            }
+
+            .content-left__bullet-link {
+              font-weight: 100;
+              color: var(--color-silver);
+
+              &.active {
+                font-weight: 400;
+                color: var(--color-white);
+              }
+              &.inactive {
+                filter: opacity(0.5);
+              }
+            }
+          }
+        }
+      }
+      @media screen and (min-width: 1080px) {
+        h3 {
+          font-size: 48px;
+          font-weight: 400;
+        }
+
+        .content-left__list {
+          .content-left__bullet {
+            font-size: 38px;
+
+            .content-left__bullet-index {
               font-weight: 100;
               color: var(--color-silver);
 
@@ -151,11 +189,21 @@ export const StyledAboutList = styled.ul`
           display: block;
         }
         .list-item__title {
-          font-size: 56px;
+          font-size: 5vw;
         }
         .list-item__text {
           display: inline-block;
           text-align: justify;
+          font-size: 1.5vw;
+        }
+      }
+    }
+    @media screen and (min-width: 1080px) {
+      .list-item__article {
+        .list-item__title {
+          font-size: 48px;
+        }
+        .list-item__text {
           font-size: 16px;
         }
       }

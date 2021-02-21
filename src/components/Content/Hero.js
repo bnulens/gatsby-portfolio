@@ -23,8 +23,10 @@ const Hero = () => {
     return (
       <HeroWrapper>
         <div className="hero-title__wrapper">
-          <h1>{t("header.mainTitle")}</h1>
-          <h2>{t("header.catchTitle")}</h2>
+          <div className="hero-title__inner-wrapper">
+            <h1>{t("header.mainTitle")}</h1>
+            <h2>{t("header.catchTitle")}</h2>
+          </div>
         </div>
       </HeroWrapper>
     )
@@ -36,8 +38,10 @@ const Hero = () => {
     <HeroWrapper>
       <HeroImage fluid={imageData} effect="sharpened" />
       <div className="hero-title__wrapper">
-        <h1>{t("header.mainTitle")}</h1>
-        <h2>{t("header.catchTitle")}</h2>
+        <div className="hero-title__inner-wrapper">
+          <h1>{t("header.mainTitle")}</h1>
+          <h2>{t("header.catchTitle")}</h2>
+        </div>
       </div>
     </HeroWrapper>
   )

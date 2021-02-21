@@ -33,11 +33,11 @@ const StyledItem = styled.li`
 
       @media screen and (min-width: 768px) {
         h4 {
-          font-size: 32px;
+          font-size: 28px;
         }
 
         p {
-          font-size: 24px;
+          font-size: 20px;
         }
       }
     }

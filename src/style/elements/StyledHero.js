@@ -3,48 +3,59 @@ import BackgroundImage from "gatsby-background-image"
 
 export const HeroWrapper = styled.div`
   position: relative;
-  width: 100vw;
-  margin: 0 auto;
   color: var(--color-white);
+  width: 100vw;
+  height: 100vh;
 
   .hero-title__wrapper {
     position: absolute;
-    top: 32%;
-    left: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    top: 30vh;
+    left: 0;
     width: 100vw;
-    max-width: 90%;
-    margin: 0 auto;
 
-    h1 {
-      font-size: 56px;
-      font-weight: 400;
-      margin-bottom: 12px;
-      line-height: 60px;
-    }
-
-    h2 {
-      font-size: 18px;
-      font-weight: 300;
-      text-align: justify;
-    }
-
-    @media screen and (min-width: 768px) {
-      left: -52%;
-      right: -50%;
-      padding: 24px;
-      max-width: 1080px;
+    .hero-title__inner-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      max-width: 90%;
+      margin: 0 auto;
 
       h1 {
-        font-size: 82px;
+        font-size: 42px;
+        font-weight: 400;
+        margin-bottom: 12px;
+        line-height: 1.2;
       }
 
       h2 {
-        font-size: 20px;
-        width: 50%;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: justify;
+        line-height: 1.4;
+      }
+
+      @media screen and (min-width: 768px) {
+        margin: 0 auto;
+        h1 {
+          font-size: 6vw;
+        }
+
+        h2 {
+          font-size: 2vw;
+          width: 50%;
+        }
+      }
+      @media screen and (min-width: 1080px) {
+        width: 90%;
+        max-width: 1080px;
+        h1 {
+          font-size: 56px;
+        }
+        h2 {
+          font-size: 20px;
+        }
       }
     }
   }

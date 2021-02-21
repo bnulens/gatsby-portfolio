@@ -5,8 +5,6 @@ export const StyledHeader = styled.header`
   position: absolute;
   top: 5vh;
   left: 0;
-  display: flex;
-  justify-content: space-between;
   width: 100vw;
   z-index: 100;
 
@@ -18,9 +16,7 @@ export const StyledHeader = styled.header`
     max-width: 90%;
     margin: 0 auto;
 
-    @media screen and (min-width: 768px) {
-      margin: 0 auto;
-      width: 90%;
+    @media screen and (min-width: 1080px) {
       max-width: 1080px;
     }
   }
@@ -29,7 +25,7 @@ export const StyledHeader = styled.header`
 export const NavLink = styled(Link)`
   font-size: 12px;
   font-weight: 300;
-  margin-right: 24px;
+  margin-left: 24px;
   color: var(--color-white);
 
   @media screen and (min-width: 768px) {
