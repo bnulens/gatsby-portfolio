@@ -72,16 +72,16 @@ export const listContent = [
 export const navLinks = {
   social: [
     {
-      title: "linkedIn",
-      url: "https://www.linkedin.com/in/brecht-nulens/",
+      title: "email",
+      url: "mailto:brechtnulens@gmail.com",
     },
     {
       title: "github",
       url: "https://github.com/bnulens",
     },
     {
-      title: "email",
-      url: "mailto:brechtnulens@gmail.com",
+      title: "linkedIn",
+      url: "https://www.linkedin.com/in/brecht-nulens/",
     },
   ],
   site: ["navbar.about", "navbar.experience"],
