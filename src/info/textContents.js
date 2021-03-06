@@ -13,7 +13,7 @@ export const reviewContent = [
 
 export const listContent = [
   {
-    tag: "about.education",
+    id: "about.academics",
     image: "fox",
     title: "about.academics",
     comment: "about.comments.item",
@@ -56,13 +56,13 @@ export const listContent = [
     ],
   },
   {
-    tag: "newbie",
+    id: "about.skills",
     image: "kobe",
     title: "about.skills",
     comment: "about.comments.item1",
   },
   {
-    tag: "extra",
+    id: "about.interests",
     image: "guitar",
     title: "about.interests",
     comment: "about.comments.item2",
