@@ -8,7 +8,6 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         border: 0;
         box-sizing: border-box;
-        scroll-behavior: smooth;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         font-family: 'Epilogue', 'Fraunces', sans-serif;
