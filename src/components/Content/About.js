@@ -19,18 +19,8 @@ const About = () => {
     return a
   })
 
-  const academics = [...listContent[0].studies]
+  const academics = listContent[0].studies
   const [activeLink, setActiveLink] = useState(0)
-
-  // Index of clicked target toggles active class
-  const handleClick = (e, i) => {
-    if (e.target.value !== activeLink) {
-      e.preventDefault()
-      e.stopPropagation()
-      setActiveLink(i)
-      cardRef[i].current.scrollIntoView({ behavior: "smooth" })
-    }
-  }
 
   const isElementInViewport = (el) => {
     let rect = el.getBoundingClientRect()
@@ -52,22 +42,12 @@ const About = () => {
           ...document.getElementsByClassName("list-item__card-marker"),
         ]
 
-        if (isElementInViewport(markers[0])) {
-          setActiveLink(0)
-        } else {
-          markers.forEach((m, i) => {
-            switch (isElementInViewport(m) && i !== activeLink) {
-              case true:
-                setActiveLink(i)
-                break
-              case false:
-                // console.log(i)
-                break
-              default:
-                setActiveLink(0)
-                break
-            }
-          })
+        for (let i = 0; i < markers.length; i++) {
+          const marker = markers[i]
+          if (isElementInViewport(marker)) {
+            setActiveLink(i)
+            break
+          }
         }
       }
     }
@@ -96,10 +76,10 @@ const About = () => {
                     className={`content-left__bullet-link ${
                       activeLink === i ? "active" : "inactive"
                     }`}
-                    href={`/#${a.tag}`}
-                    key={a.tag}
+                    href={`/#${t(a.id)}`}
+                    key={a.id}
                     value={i}
-                    onClick={(e) => handleClick(e, i)}
+                    onClick={() => setActiveLink(i)}
                   >
                     {t(a.title)}
                   </a>
@@ -113,6 +93,7 @@ const About = () => {
             {listContent.map((a, i) => {
               return (
                 <li
+                  id={t(a.id)}
                   className="list-item__card"
                   key={Math.random() * 10}
                   ref={cardRef[i]}
