@@ -24,7 +24,7 @@ const Experience = () => {
           </a>
           <a
             className="link__motivation"
-            href="https://unruffled-bartik-c63ef3.netlify.app/"
+            href="https://elated-hypatia-859418.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
